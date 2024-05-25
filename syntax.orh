@@ -1,0 +1,31 @@
+start function name takes (type param: default) gives (type, othertype)
+define as {
+    make something as type;     // To initialize a variable
+    let something_else = 15;    // To initialize a variable, untyped because it is a constant and will get automatically typed
+    let type another_thing = bleh()  // (imagine that bleh returns one of 2 types) this must be typed. If bleh returns a diffrent type it will throw.
+    print("something"); // Semi-colon optional
+    return something
+}
+end
+
+// main gets a shorthand
+start main
+define as {
+    if (typecheck(name(something)) as type) functionName
+    if (typecheck(name(something)) as othertype) start lambda define as {
+        print("Yippie")
+    } end
+
+    if (1 == 2) then {      // 'then' is shorthand for 'start lambda define as'
+        print("huh")
+    } end
+
+    start try define as {
+        riskyFunction();
+    } catch error define as {
+        print("Something went wrong!")
+        print(error.message);
+    } end
+}
+end
+  
