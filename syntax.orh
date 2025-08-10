@@ -8,6 +8,14 @@ define as {
 }
 end
 
+// Function shorthand
+start func other_func
+define as {
+    let something = "Hi"
+    print(something)
+    // This function may not return anything.
+} end
+
 // main gets it's own shorthand
 start main
 define as {
