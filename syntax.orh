@@ -1,22 +1,25 @@
 start function name takes (type param: default) gives (type, othertype)
 define as {
-    make something as type;     // To initialize a variable
-    let something_else = 15;    // To initialize a variable, untyped because it is a constant and will get automatically typed
-    let type another_thing = bleh()  // (imagine that bleh returns one of 2 types) this must be typed. If bleh returns a diffrent type it will throw.
-    print("something"); // Semi-colon optional
+    let something = "Something"
+    let something_else = 15 end
+    let another_thing = bleh()
+    print("something")
     return something
 }
 end
 
-// main gets a shorthand
+// main gets it's own shorthand
 start main
 define as {
-    if (typecheck(name(something)) as type) functionName
-    if (typecheck(name(something)) as othertype) start lambda define as {
+    
+    if (1 + 1 == 2) then {
         print("Yippie")
     } end
+    
+    // 'then' is technically shorthand for `start function _ takes () gives () define as`
+    // The name of the function can be anything, however the name will be disregarded and it can not be called later on.
 
-    if (1 == 2) then {      // 'then' is shorthand for 'start lambda define as'
+    if (1 == 2) start function _ takes () gives define as {      
         print("huh")
     } end
 
@@ -24,7 +27,7 @@ define as {
         riskyFunction();
     } catch error define as {
         print("Something went wrong!")
-        print(error.message);
+        print(error)
     } end
 }
 end
